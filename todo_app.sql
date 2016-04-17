@@ -31,3 +31,7 @@ CREATE TABLE tasks (
 ALTER TABLE tasks *
 DROP completed_at;
 
+-- ii. add column complete
+ALTER TABLE tasks
+ADD completed_at timestamp default NULL;
+
