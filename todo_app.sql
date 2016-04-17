@@ -4,3 +4,6 @@ DROP USER IF EXISTS michael;
 -- 2. create user michael with pass stonebreaker
 CREATE ROLE michael WITH ENCRYPTED PASSWORD 'stonebreaker';
 
+-- 3. drop database todo_app
+DROP DATABASE IF EXISTS todo_app;
+
