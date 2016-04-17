@@ -13,3 +13,13 @@ CREATE DATABASE todo_app;
 -- 5. Connect to todo_app
 \c todo_app;
 
+-- 6. Create table named tasks w/ columns
+CREATE TABLE tasks (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  created_at timestamp without time zone NOT NULL default NOW(),
+  updated_at timestamp without time zone,
+  completed_at BOOL NOT NULL default FALSE
+  );
+
