@@ -23,3 +23,11 @@ CREATE TABLE tasks (
   completed_at BOOL NOT NULL default FALSE
   );
 
+-- 7. Column id is tables primary key
+--Done above
+
+-- 8. Queries
+-- i. remove column completed
+ALTER TABLE tasks *
+DROP completed_at;
+
