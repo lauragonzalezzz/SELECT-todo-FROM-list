@@ -10,3 +10,6 @@ DROP DATABASE IF EXISTS todo_app;
 -- 4. create database todo_app
 CREATE DATABASE todo_app;
 
+-- 5. Connect to todo_app
+\c todo_app;
+
