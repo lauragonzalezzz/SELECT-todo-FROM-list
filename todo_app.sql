@@ -41,3 +41,51 @@ ALTER updated_at SET NOT NULL;
 ALTER TABLE tasks
 ALTER updated_at SET DEFAULT NOW();
 
+-- iv. create new task
+INSERT INTO tasks VALUES (DEFAULT, 'Study SQL', 'Complete this exercise', NOW(), NOW(), NULL);
+
+--v. create a new task
+INSERT INTO tasks (title, description)
+VALUES ('Study PostgreSQL', 'Read all the documentation');
+
+-- vi. select all the titles of the tasks that are not complete
+SELECT tasks.title FROM tasks WHERE tasks.completed_at IS NULL;
+
+--vii. update study sql task to be complete
+UPDATE tasks set completed_at= NOW() WHERE title = 'Study SQL';
+
+-- viii.
+SELECT tasks.title, tasks.description FROM tasks WHERE tasks.completed_at IS NULL;
+
+-- ix.
+SELECT * FROM tasks ORDER BY completed_at DESC;
+
+-- x. create new task
+INSERT INTO tasks (title, description)
+VALUES ('mistake 1', 'a test entry');
+
+-- xi. create new task
+INSERT INTO tasks (title, description)
+VALUES ('mistake 2', 'another test entry');
+
+-- xii. create new task
+INSERT INTO tasks (title, description)
+VALUES ('third mistake', 'another test entry');
+
+-- xiii. select title fields of all tasks with title that includes 'mistake'
+SELECT title FROM tasks WHERE title LIKE '%mistake%';
+
+--xiv. delete tasks with title of mistake 1
+DELETE FROM tasks where title = 'mistake 1';
+
+--xv. selected title/desc where title includes mistake
+SELECT title, description FROM tasks WHERE title LIKE '%mistake%';
+
+--xvi. delete all tasks with mistake in title
+DELETE FROM tasks WHERE title LIKE '%mistake%';
+
+--xvii. select all sorted by title ascending
+SELECT * FROM tasks ORDER BY title ASC;
+
+
+SELECT * FROM tasks;
