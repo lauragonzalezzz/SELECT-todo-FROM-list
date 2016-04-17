@@ -35,3 +35,9 @@ DROP completed_at;
 ALTER TABLE tasks
 ADD completed_at timestamp default NULL;
 
+-- iii. change update to not allow null values, default now()
+ALTER TABLE tasks
+ALTER updated_at SET NOT NULL;
+ALTER TABLE tasks
+ALTER updated_at SET DEFAULT NOW();
+
